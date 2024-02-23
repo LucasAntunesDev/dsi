@@ -1,6 +1,6 @@
 select
-    palavras.palavra as palavra,
-    grupos.nome as 'grupos'
+    palavras.palavra as 'Palavra',
+    grupos.nome as 'Grupo'
 from
     grupos_palavras
     join grupos on grupos_palavras.grupo_id = grupos.id
