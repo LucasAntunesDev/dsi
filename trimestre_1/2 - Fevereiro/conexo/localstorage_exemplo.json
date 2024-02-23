@@ -1,0 +1,45 @@
+{
+ "145": {
+  "status": "won",
+  "groups": [
+   {
+    "number": 3,
+    "theme": "Advérbios de lugar",
+    "words": ["lá", "ali", "aqui", "acolá"]
+   },
+   {
+    "number": 2,
+    "theme": "Fontes de energia",
+    "words": ["vento", "sol", "carvão", "água"]
+   },
+   {
+    "number": 4,
+    "theme": "Participantes num processo judicial",
+    "words": ["ré", "juíza", "testemunha", "autora"]
+   },
+   { "number": 1, "theme": "Notas musicais", "words": ["dó", "mi", "si", "fá"] }
+  ],
+  "items": [],
+  "selected": [],
+  "attempts": [
+   { "selected": ["mi", "lá", "si", "sol"] },
+   { "selected": ["mi", "lá", "si", "fá"] },
+   { "selected": ["fá", "mi", "lá", "si"] },
+   { "selected": ["dó", "ré", "mi", "fá"] },
+   { "selected": ["ré", "lá", "fá", "dó"] },
+   { "selected": ["aqui", "lá", "acolá", "ali"], "group": 3 },
+   { "selected": ["dó", "mi", "si", "ré"] },
+   { "selected": ["testemunha", "juíza", "autora", "água"] },
+   { "selected": ["água", "carvão", "vento", "sol"], "group": 2 },
+   { "selected": ["autora", "testemunha", "fá", "juíza"] },
+   { "selected": ["fá", "dó", "ré", "mi"] },
+   { "selected": ["fá", "dó", "ré", "juíza"] },
+   { "selected": ["fá", "dó", "ré", "juíza"] },
+   { "selected": ["autora", "testemunha", "juíza", "si"] },
+   { "selected": ["autora", "testemunha", "dó", "juíza"] },
+   { "selected": ["dó", "testemunha", "ré", "juíza"] },
+   { "selected": ["testemunha", "juíza", "ré", "autora"], "group": 4 },
+   { "selected": ["dó", "mi", "fá", "si"], "group": 1 }
+  ]
+ }
+}
