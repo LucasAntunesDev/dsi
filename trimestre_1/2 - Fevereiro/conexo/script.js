@@ -1,4 +1,4 @@
-const dataAtual =document.querySelector('#dataAtual')
+const dataAtual = document.querySelector('#dataAtual')
 dataAtual.innerHTML = new Date(Date.now()).toLocaleString().split(',')[0];
 
 const criarTabuleiro = (max = 16) => {
@@ -53,8 +53,7 @@ const tab = criarTabuleiro();
 const div = document.getElementById("tabuleiro");
 
 const verificarJogadas = (grupos, jogadas) => {
-    let numeroAcertosElement = document.querySelector('#numeroAcertos')
-    numeroAcertos = parseInt(numeroAcertosElement.innerHTML)
+    let numeroAcertos = 0
     const gruposAcertados = document.querySelector('#grupos')
 
     for (const grupo of grupos) {
@@ -64,13 +63,13 @@ const verificarJogadas = (grupos, jogadas) => {
         if (todasPresentes) {
             console.log(`Todas as palavras de 'jogadas' estão no grupo com tema "${grupo.tema}" (Grupo ${grupo.numero}).`);
             numeroAcertos++
-            numeroAcertosElement.innerHTML = numeroAcertos
+            // numeroAcertosElement.innerHTML = numeroAcertos
             gruposAcertados.innerHTML = `${gruposAcertados.innerHTML} <span class="uppercase"><b>${grupo.tema}</b>: ${jogadas} </span>`
 
         } else { console.log('Não!!') }
     }
 
-    if(numeroAcertos === 4) alert('Você venceu!! =D')
+    if (numeroAcertos === 4) alert('Você venceu!! =D')
 }
 
 for (let i = 0; i < 16; i++) {
@@ -83,8 +82,11 @@ for (let i = 0; i < 16; i++) {
 
         jogadas.push(btn.innerHTML)
 
-
         if (jogadas.length === 4) {
+            let numeroTentativasElement = document.querySelector('#numeroTentativas')
+            let numeroTentativas = parseInt(document.querySelector('#numeroTentativas').innerHTML)
+            numeroTentativas++
+            numeroTentativasElement.innerHTML = numeroTentativas
 
             tentativa = {
                 selecionado: jogadas
@@ -96,7 +98,7 @@ for (let i = 0; i < 16; i++) {
 
             jogadas = []
         }
-    
+
     });
     div.appendChild(btn);
 }

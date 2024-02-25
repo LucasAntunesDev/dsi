@@ -17,7 +17,7 @@
 
         <div class="mx-auto">
             <span class="font-semibold" id="dataAtual"></span>
-            <span class="capitalize">tentativas: <span class="font-bold" id="numeroAcertos">0</span></span>
+            <span class="capitalize">tentativas: <span class="font-bold" id="numeroTentativas">0</span></span>
         </div>
         <span id="grupos" class="flex flex-col gap-y-1"></span>
 
