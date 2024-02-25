@@ -12,10 +12,12 @@
     <div class="flex flex-col justifycenter items-center h-screen w-screen">
         <div class="mx-auto">
             <span class="font-semibold">23/02/2024</span>
-            <span class="capitalize">tentativas: <span class="font-bold">0</span></span>
+            <span class="capitalize">tentativas: <span class="font-bold" id="numeroAcertos">0</span></span>
         </div>
 
-        <div
+        <main id="tabuleiro" class="grid grid-cols-4 gap-2 min-w-6/12 m-auto text-uppercase"></main>
+
+        <!-- <div
             class="grid grid-cols-4 gap-2 min-w-6/12 m-auto *:p-6 *:rounded-md *:flex *:items-center 
             font-semibold *:hover:cursor-pointer *:focus:scale-90 *:transition *:duration-300 *:ease-in-out
             *:uppercase">
@@ -50,10 +52,11 @@
             <button id="lá" onclick="ativarBotao(this)" class="bg-slate-800">lá</button>
 
             <button id="si" onclick="ativarBotao(this)" class="bg-slate-800">si</button>
-        </div>
+        </div> -->
     </div>
 </body>
 
-<script src="scripts.js"></script>
+<!-- <script src="scripts.js"></script> -->
+<script src="script.js"></script>
 
 </html>

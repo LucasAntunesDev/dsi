@@ -1,13 +1,13 @@
-let jogadas = []
+const jogadas = []
 
 const tentativas = []
 
 let tentativa = {
-    "selecionado": jogadas
+    selecionado: jogadas
 }
 
 
-let grupos = [
+const grupos = [
     {
         numero: 3,
         tema: "Advérbios de lugar",
@@ -34,23 +34,35 @@ let grupos = [
     console.log()
 }*/
 
+function verificarJogadas(grupos, jogadas) {
+    for (const grupo of grupos) {
+        const palavrasGrupo = grupo.palavras;
+        const todasPresentes = jogadas.every(jogada => palavrasGrupo.includes(jogada));
+
+        if (todasPresentes) {
+            console.log(`Todas as palavras de 'jogadas' estão no grupo com tema "${grupo.tema}" (Grupo ${grupo.numero}).`);
+        }else console.log('Não!!')
+    }
+}
+
+
 const ativarBotao = (btn) => {
     btn.setAttribute("class", "bg-blue-600")
     btn.setAttribute("disabled", "true")
 
-
     // jogadas.every(palavra => palavra)
-
+    
     if (jogadas.length === 4) {
+        verificarJogadas(grupos, jogadas)
         // tentativa[0].selected.push
         // jogadas = []
         tentativa = {
-            "selecionado": jogadas
+            selecionado: jogadas
         }
         // tentativa.push(jogadas)
         tentativas.push(tentativa)
 
-        let todasPresentes = jogadas.every((palavra) => {
+        const todasPresentes = jogadas.every((palavra) => {
             return grupos.some((grupo) => grupo.palavras.includes(palavra));
         });
         // console.log(todasPresentes)
@@ -74,9 +86,9 @@ const ativarBotao = (btn) => {
     //  console.log(`botão: ${btn.innerHTML}`)
     //  console.log(jogadas.length)
 
-
+    
 }
 
-const verificarStatusJogo = () => {
+// const verificarStatusJogo = () => {
 
-}
+// }
