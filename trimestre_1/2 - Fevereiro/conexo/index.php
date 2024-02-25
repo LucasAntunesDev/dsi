@@ -10,8 +10,13 @@
 
 <body class="bg-slate-900 text-zinc-50">
     <div class="flex flex-col justifycenter items-center h-screen w-screen">
+        
+        <h1 class="text-blue-500 text-5xl font-bold">
+            CONEXO
+        </h1>
+
         <div class="mx-auto">
-            <span class="font-semibold">23/02/2024</span>
+            <span class="font-semibold" id="dataAtual"></span>
             <span class="capitalize">tentativas: <span class="font-bold" id="numeroAcertos">0</span></span>
         </div>
         <span id="grupos" class="flex flex-col gap-y-1"></span>

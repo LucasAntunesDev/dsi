@@ -1,3 +1,6 @@
+const dataAtual =document.querySelector('#dataAtual')
+dataAtual.innerHTML = new Date(Date.now()).toLocaleString().split(',')[0];
+
 const criarTabuleiro = (max = 16) => {
     const tab = [];
 
@@ -34,10 +37,6 @@ const grupos = [
 
 let todasPalavras = grupos[0].palavras.concat(grupos[1].palavras).concat(grupos[2].palavras).concat(grupos[3].palavras)
 todasPalavras = todasPalavras.sort()
-console.log(todasPalavras)
-console.log()
-// console.log(todasPalavras.sort())
-
 
 let placar = [];
 let trancarJogo = false;
@@ -53,11 +52,6 @@ let tentativa = {
 const tab = criarTabuleiro();
 const div = document.getElementById("tabuleiro");
 
-// let i = 0
-
-// tab.forEach((n) => {
-
-
 const verificarJogadas = (grupos, jogadas) => {
     let numeroAcertosElement = document.querySelector('#numeroAcertos')
     numeroAcertos = parseInt(numeroAcertosElement.innerHTML)
@@ -71,13 +65,8 @@ const verificarJogadas = (grupos, jogadas) => {
             console.log(`Todas as palavras de 'jogadas' estão no grupo com tema "${grupo.tema}" (Grupo ${grupo.numero}).`);
             numeroAcertos++
             numeroAcertosElement.innerHTML = numeroAcertos
-            // gruposAcertados.innerHTML = jogadas
-            console.log(jogadas)
             gruposAcertados.innerHTML = `${gruposAcertados.innerHTML} <span class="uppercase"> ${jogadas} </span>`
 
-            // jogadas.forEach(palavra => {
-            //     gruposAcertados.innerHTML = jogadas
-            // });
         } else { console.log('Não!!') }
     }
 
@@ -90,30 +79,23 @@ for (let i = 0; i < 16; i++) {
     btn.setAttribute("class", "bg-slate-800 p-6 rounded-md flex items-center hover:cursor-pointer focus:scale-90 transition duration-300 ease-in-out uppercase");
     btn.innerHTML = todasPalavras[i];
     btn.addEventListener("click", () => {
-        // if (trancarJogo) return;
         if (jogadas.some((j) => j === btn)) return;
-        // jogadas.push(btn);
 
         jogadas.push(btn.innerHTML)
 
 
         if (jogadas.length === 4) {
-            // trancarJogo = true;
 
             tentativa = {
                 selecionado: jogadas
             }
-            // tentativa.push(jogadas)
+
             tentativas.push(tentativa)
 
             verificarJogadas(grupos, jogadas)
 
             jogadas = []
         }
-
-        console.log(`🎮 Jogadas ${jogadas}`)
-        console.log(`🟩🟥 Tentativa {${tentativa}},`)
-        console.log(`TentativaSS {${tentativas}},`)
     
     });
     div.appendChild(btn);
