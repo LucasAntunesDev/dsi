@@ -73,9 +73,8 @@ const verificarJogadas = (grupos, jogadas) => {
         } else { console.log('Não!!') }
     }
 
-    if(numeroAcertos === 2) alert('Você venceu!! =D')
+    if(numeroAcertos === 4) alert('Você venceu!! =D')
 }
-
 
 for (let i = 0; i < 16; i++) {
     const btn = document.createElement("button");
@@ -89,8 +88,6 @@ for (let i = 0; i < 16; i++) {
 
         jogadas.push(btn.innerHTML)
 
-
-        
 
         if (jogadas.length === 4) {
             // trancarJogo = true;
