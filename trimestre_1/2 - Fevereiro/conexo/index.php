@@ -14,6 +14,7 @@
             <span class="font-semibold">23/02/2024</span>
             <span class="capitalize">tentativas: <span class="font-bold" id="numeroAcertos">0</span></span>
         </div>
+        <span id="grupos" class="flex flex-col gap-y-1"></span>
 
         <main id="tabuleiro" class="grid grid-cols-4 gap-2 min-w-6/12 m-auto text-uppercase"></main>
 

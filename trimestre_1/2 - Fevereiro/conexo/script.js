@@ -61,6 +61,7 @@ const div = document.getElementById("tabuleiro");
 const verificarJogadas = (grupos, jogadas) => {
     let numeroAcertosElement = document.querySelector('#numeroAcertos')
     numeroAcertos = parseInt(numeroAcertosElement.innerHTML)
+    const gruposAcertados = document.querySelector('#grupos')
 
     for (const grupo of grupos) {
         const palavrasGrupo = grupo.palavras;
@@ -70,6 +71,13 @@ const verificarJogadas = (grupos, jogadas) => {
             console.log(`Todas as palavras de 'jogadas' estão no grupo com tema "${grupo.tema}" (Grupo ${grupo.numero}).`);
             numeroAcertos++
             numeroAcertosElement.innerHTML = numeroAcertos
+            // gruposAcertados.innerHTML = jogadas
+            console.log(jogadas)
+            gruposAcertados.innerHTML = `${gruposAcertados.innerHTML} <span class="uppercase"> ${jogadas} </span>`
+
+            // jogadas.forEach(palavra => {
+            //     gruposAcertados.innerHTML = jogadas
+            // });
         } else { console.log('Não!!') }
     }
 
