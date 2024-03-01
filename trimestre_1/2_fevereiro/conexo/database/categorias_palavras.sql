@@ -65,3 +65,11 @@ values
     (9, 35),
     (9, 36),
     (9, 37)
+
+insert into
+    categorias_palavras (categoria_id, palavra_id)
+values
+    (10, 38),
+    (10, 39),
+    (10, 40),
+    (10, 41)
