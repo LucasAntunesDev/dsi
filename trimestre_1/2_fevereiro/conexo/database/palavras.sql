@@ -48,3 +48,11 @@ values
     ('escola'),
     ('ginágio'),
     ('instituto');
+
+insert into
+    palavras (nome)
+values
+    ('traders'),
+    ('investidores'),
+    ('contadores'),
+    ('economistas');
