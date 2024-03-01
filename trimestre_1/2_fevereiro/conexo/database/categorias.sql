@@ -20,3 +20,8 @@ insert into
     categorias (nome, disciplina_id)
 values
     ('Bancos', 1)
+
+insert into
+    categorias (nome, disciplina_id)
+values
+    ('Estabelecimentos educacionais', 1)

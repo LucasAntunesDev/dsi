@@ -1,42 +1,50 @@
 create table
-	palavras (
-		id int not null primary key auto_increment,
-		nome varchar(255) not null
-	);
+    palavras (
+        id int not null primary key auto_increment,
+        nome varchar(255) not null
+    );
 
 insert into
-	palavras (nome)
+    palavras (nome)
 values
-	('lá'),
-	('acolá'),
-	('ali'),
-	('aqui'),
-	('vento'),
-	('sol'),
-	('carvão'),
-	('água'),
-	('ré'),
-	('juíza'),
-	('testemunha'),
-	('autora'),
-	('dó'),
-	('mi'),
-	('si'),
-	('fá');
+    ('lá'),
+    ('acolá'),
+    ('ali'),
+    ('aqui'),
+    ('vento'),
+    ('sol'),
+    ('carvão'),
+    ('água'),
+    ('ré'),
+    ('juíza'),
+    ('testemunha'),
+    ('autora'),
+    ('dó'),
+    ('mi'),
+    ('si'),
+    ('fá');
 
 insert into
-	palavras (nome)
+    palavras (nome)
 values
-	('inter'),
-	('grêmio'),
-	('palmeiras'),
-	('flamengo'),
-	('milan');
+    ('inter'),
+    ('grêmio'),
+    ('palmeiras'),
+    ('flamengo'),
+    ('milan');
 
 insert into
-	palavras (nome)
+    palavras (nome)
 values
-	('banrisul'),
-	('caixa'),
-	('bradesco'),
-	('santander');
+    ('banrisul'),
+    ('caixa'),
+    ('bradesco'),
+    ('santander');
+
+insert into
+    palavras (nome)
+values
+    ('liceu'),
+    ('escola'),
+    ('ginágio'),
+    ('instituto');
