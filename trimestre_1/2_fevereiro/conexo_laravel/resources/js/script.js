@@ -64,7 +64,7 @@ const verificarJogadas = (grupos, jogadas) => {
         if (todasPresentes) {
             console.log(`Todas as palavras de 'jogadas' estão no grupo com tema "${grupo.tema}" (Grupo ${grupo.numero}).`);
             numeroAcertos++
-            numeroAcertosElement.innerHTML = numeroAcaertos
+            numeroAcertosElement.innerHTML = numeroAcertos
             gruposAcertados.innerHTML = `${gruposAcertados.innerHTML} <span class="uppercase"><b>${grupo.tema}</b>: ${jogadas} </span>`
 
         } else { console.log('Não!!') }

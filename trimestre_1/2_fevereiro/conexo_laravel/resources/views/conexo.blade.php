@@ -1,8 +1,6 @@
 @extends('layout')
 @section('content')
 
-
-
 <h1 class="text-blue-500 text-5xl font-bold inline-flex gap-x-2 mt-4">
     <svg width="50" height="50" viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2.25 15.9029C2.25 8.36262 8.36262 2.25 15.9029 2.25H176.097C183.637 2.25 189.75 8.36262 189.75 15.9029V37.2925C189.75 39.8059 187.712 41.8434 185.199 41.8434H6.80097C4.28754 41.8434 2.25 39.8059 2.25 37.2925V15.9029Z" fill="#C2410C"></path>
