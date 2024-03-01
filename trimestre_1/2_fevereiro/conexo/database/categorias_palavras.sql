@@ -48,3 +48,12 @@ values
     (7, 7),
     (7, 28),
     (7, 29)
+
+
+insert into
+    categorias_palavras (categoria_id, palavra_id)
+values
+    (8, 30),
+    (8, 31),
+    (8, 32),
+    (8, 33)
