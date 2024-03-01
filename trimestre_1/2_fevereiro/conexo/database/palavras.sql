@@ -56,3 +56,11 @@ values
     ('investidores'),
     ('contadores'),
     ('economistas');
+
+insert into
+    palavras (nome)
+values
+    ('merenda'),
+    ('provisão'),
+    ('refeição'),
+    ('lance');
