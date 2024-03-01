@@ -3,18 +3,18 @@
 namespace Controller;
 
 use Embed\Http\Redirects;
-use Model\ProfessorModel;
-use Model\VO\ProfessorVO;
+use Model\DisciplinaModel;
+use Model\VO\DisciplinaVO;
 
-final class ProfessorController extends Controller
+final class DisciplinaController extends Controller
 {
     public function list()
     {
-        $model = new ProfessorModel();
+        $model = new DisciplinaModel();
         $data = $model->selectAll();
 
-        $this->loadView('listaProfessores', [
-            'professores' => $data
+        $this->loadView('listaDisciplinas', [
+            'disciplinas' => $data
         ]);
     }
 
@@ -24,30 +24,30 @@ final class ProfessorController extends Controller
         $id = (isset($_GET['id'])) ? $_GET['id'] : null; # < php 8
 
         if (empty($id)) {
-            $vo = new ProfessorVO();
+            $vo = new DisciplinaVO();
         } else {
-            $model = new ProfessorModel();
-            $vo = $model->selectOne(new ProfessorVO($id));
+            $model = new DisciplinaModel();
+            $vo = $model->selectOne(new DisciplinaVO($id));
         }
 
-        $this->loadView('formProfessor', [
-            'professor' => $vo
+        $this->loadView('formDisciplina', [
+            'disciplina' => $vo
         ]);
     }
 
     public function save()
     {
         $id = $_POST['id'];
-        $vo = new ProfessorVO(
+        $vo = new DisciplinaVO(
             $_POST['id'],
             $_POST['nome'],
             $_POST['professor_id']
         );
-        $model = new ProfessorModel();
+        $model = new DisciplinaModel();
 
         $return = empty($id) ? $model->insert($vo) : $model->update($vo);
 
-        $this->redirect('professores.php');
+        $this->redirect('disciplinas.php');
     }
 
     public function remove()
@@ -55,10 +55,10 @@ final class ProfessorController extends Controller
         if (empty($_GET['id']))
             die('Necessário passar o ID');
 
-        $model = new ProfessorModel();
+        $model = new DisciplinaModel();
 
-        $return = $model->delete(new ProfessorVO($_GET['id']));
+        $return = $model->delete(new DisciplinaVO($_GET['id']));
 
-        $this->redirect('professores.php');
+        $this->redirect('disciplinas.php');
     }
 }

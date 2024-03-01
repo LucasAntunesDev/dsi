@@ -27,7 +27,7 @@
                                 d="m1 9 4-4-4-4" />
                         </svg> -->
                         <a href="professores.php" class="ms-1 text-sm font-medium 
-                        hover:text-blue-500 md:ms-2">Professores</a>
+                        hover:text-blue-500 md:ms-2">Disciplinas</a>
                     </div>
                 </li>
                 <li aria-current="page">
@@ -44,31 +44,24 @@
         </nav>
 
         <h1 class="font-bold text-4xl text-blue-500 mb-4">
-            <?php echo isset($_GET['id']) ? 'Editar' : 'Adicionar' ?> professor
+            <?php echo isset($_GET['id']) ? 'Editar' : 'Adicionar' ?> disciplina
         </h1>
 
-        <form action="salvarProfessor.php" method="post">
+        <form action="salvarDisciplina.php" method="post">
 
             <fieldset class="flex flex-col items-center p-10 w-[40rem]">
-                <input type="hidden" name="id" value='<?php echo $professor->getId(); ?>'>
+                <input type="hidden" name="id" value='<?php echo $disciplina->getId(); ?>'>
 
                 <div class="flex flex-col gap-y-1">
                     <label for="nome" class="label">Nome</label>
-                    <input type="nome" id="nome" name="nome" value='<?php echo $professor->getNome(); ?>' class="rounded-md 
+                    <input type="nome" id="nome" name="nome" value='<?php echo $disciplina->getNome(); ?>' class="rounded-md 
                     border-none py-1.5 pr-7 pl-10 ring-1 ring-inset ring-neutral-300
                     focus:ring-2 focus:ring-inset focus:ring-blue-400 outline-none bg-slate-800">
                 </div>
 
                 <div class="flex flex-col gap-y-1">
-                    <label for="login" class="label">Login</label>
-                    <input type="login" id="login" name="login" value='<?php echo $professor->getLogin(); ?>' class="rounded-md 
-                    border-none py-1.5 pr-7 pl-10 ring-1 ring-inset ring-neutral-300
-                    focus:ring-2 focus:ring-inset focus:ring-blue-400 outline-none bg-slate-800">
-                </div>
-
-                <div class="flex flex-col gap-y-1">
-                    <label for="senha" class="label">Senha</label>
-                    <input type="senha" id="senha" name="senha" value='<?php echo $professor->getSenha(); ?>' class="rounded-md 
+                    <label for="professor_id" class="label">Professor</label>
+                    <input type="professor_id" id="professor_id" name="professor_id" value='<?php echo $disciplina->getProfessorId(); ?>' class="rounded-md 
                     border-none py-1.5 pr-7 pl-10 ring-1 ring-inset ring-neutral-300
                     focus:ring-2 focus:ring-inset focus:ring-blue-400 outline-none bg-slate-800">
                 </div>
@@ -76,7 +69,7 @@
             </fieldset>
 
             <div class="flex items-center gap-x-2 justify-center">
-                <a href="professores.php" class="btn outlined">
+                <a href="disciplinas.php" class="btn outlined">
                     Cancelar
                 </a>
 
