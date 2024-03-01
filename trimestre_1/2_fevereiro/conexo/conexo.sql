@@ -29,29 +29,29 @@ values
 	('Introdução a Computação', 5);
 	-- Categorias –
 create table
-	grupos (
+	categorias (
 		id int not null primary key auto_increment,
 		nome varchar(255) not null
 	);
 insert into
-	grupos (nome)
+	categorias (nome)
 values
 	('Advérbios de Lugar'),
 	('Fontes de Energia'),
 	('Participantes num processo judicial'),
 	('Notas Musicais'),
 	('grupo 5');
-	-- grupos_disciplinas;
+	-- categorias_disciplinas;
 create table
-	grupos_disciplinas (
+	categorias_disciplinas (
 		id int not null primary key auto_increment,
-		grupo_id int not null,
+		categoria_id int not null,
 		disciplina_id int not null,
-		foreign key (grupo_id) references grupos (id),
+		foreign key (categoria_id) references categoria (id),
 		foreign key (disciplina_id) references disciplinas (id)
 	);
 insert into
-	grupos_disciplinas (grupo_id, disciplina_id)
+	categorias_disciplinas (grupo_id, disciplina_id)
 values
 	(1, 1),
 	(1, 2),
@@ -59,7 +59,7 @@ values
 	(1, 4),
 	(1, 5);
 insert into
-	grupos_disciplinas (grupo_id, disciplina_id)
+	categorias_disciplinas (grupo_id, disciplina_id)
 values
 	(2, 1),
 	(1, 2),
@@ -91,17 +91,17 @@ values
 	('mi'),
 	('si'),
 	('fá');
-	-- grupos_palavras–
+	-- categorias_palavras–
 create table
-	grupos_palavras (
+	categorias_palavras (
 		id int not null primary key auto_increment,
-		grupo_id int not null,
+		categoria_id int not null,
 		palavra_id int not null,
-		foreign key (grupo_id) references grupos (id),
+		foreign key (categoria_id) references categoria (id),
 		foreign key (palavra_id) references palavras (id)
 	);
 insert into
-	grupos_palavras (grupo_id, palavra_id)
+	categorias_palavras (grupo_id, palavra_id)
 values
 	(1, 1),
 	(4, 1),
