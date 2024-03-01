@@ -1,57 +1,41 @@
-<?php include_once('includes/head.php')?>
-<body>
+<?php include_once('includes/head.php') ?>
+
+<body class="bg-slate-900 text-zinc-50">
 
     <div class="flex flex-col justify-center items-center gap-2">
         <div class="flex justify-around items-center gap-2">
 
             <div class="flex justify-start items-center gap-x-12">
 
-                <h1 class="font-bold text-3xl text-red-500 py-4 flex items-center gap-x-2">
+                <h1 class="text-blue-500 text-5xl font-bold inline-flex gap-x-2 mt-4 items-center">
                     Professores
                 </h1>
-
-                <div class="relative">
-                    <input id="pesquisa-input" placeholder="Procurar" type="text" class="rounded-full 
-        border-0 py-1.5 pr-10 pl-10 outline-none hover:bg-slate-100
-        bg-slate-50">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                            class="w-5 h-5 fill-gray-600">
-                            <path fill-rule="evenodd"
-                                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </div>
-                </div>
-
 
             </div>
 
             <a href="professor.php" class="bg-emerald-500 rounded-md py-1 px-4 focus:bg-slate-50
-            text-slate-50 flex items-center mt-4 gap-x-2 justify-center border-2 border-emerald-500 
+            text-zinc-50 flex items-center mt-4 gap-x-2 justify-center border-2 border-emerald-500 
             focus:text-emerald-500 focus:border-emerald-500 transition duration-300 ease-in-out
             hover:bg-emerald-600 hover:border-emerald-600 self-baseline">
-
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round"
                         d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
                 </svg>
-
                 Adicionar professor
             </a>
 
         </div>
 
         <div class="relative overflow-x-auto max-w-11/12 rounded-xl">
-            <table class="table-auto text-gray-600 font-medium">
-                <thead class="pl-6 font-semibold text-sm text-left pr-3 py-3.5 text-emerald-500 bg-slate-50">
+            <table class="table-auto text-zinc-50 font-medium">
+                <thead class="pl-6 font-semibold text-sm text-left pr-3 py-3.5 text-sky-500 bg-slate-800">
                     <tr class="table-row">
                         <th class="w-fit capitalize pl-2 pr-6 py-3 whitespace-nowrap" scope="col"">
                             <div class=" flex items-center gap-x-2">
                             <a <?php
                             echo (!isset($_GET['descrescente'])) ? "href='professores.php?descrescente'" : "href='professores.php'";
-                            ?> class="hover:text-gray-600">
+                            ?> class="hover:text-zinc-50">
 
                                 <?php
                                 if (isset($_GET['descrescente'])) {
@@ -68,19 +52,20 @@
                             Nome
         </div>
         </th>
-                        <th class=" w-fit capitalize pl-2 pr-6 py-3 whitespace-nowrap" scope="col"">Área</th>
-                        <th class=" w-fit capitalize pl-2 pr-6 py-3 whitespace-nowrap" scope="col"">Ações</th>
-                    </tr>
-                </thead>
+        <th class=" w-fit capitalize pl-2 pr-6 py-3 whitespace-nowrap" scope="col">Login</th>
+        <th class=" w-fit capitalize pl-2 pr-6 py-3 whitespace-nowrap" scope="col">Senha</th>
+        <th class=" w-fit capitalize pl-2 pr-6 py-3 whitespace-nowrap" scope="col">Ações</th>
+        </tr>
+        </thead>
 
-                <tbody class=" text-sm bg-neutral-50/40">
+        <tbody class=" text-sm bg-neutral-50/40">
             <?php
 
             if (isset($_GET['descrescente']))
                 rsort($professores);
 
             foreach ($professores as $professor) {
-                echo '<tr class="even:bg-slate-50">';
+                echo '<tr class="bg-slate-800 even:bg-slate-700">';
                 echo '
                         <td class="pl-2 pr-1 w-fit">
                             <span class="bg-sky-100 py-1 px-2 rounded-md hover:bg-sky-200 text-sky-700
@@ -89,10 +74,12 @@
                     ' </span>
                         ' . $professor->getNome() . '
                         </td>';
+                echo '<td class="pl-2 pr-1 w-fit">' . $professor->getLogin() . '</td>';
+                echo '<td class="pl-2 pr-1 w-fit">' . $professor->getSenha() . '</td>';
                 echo '<td class="flex pl-2 pr-1 w-fit py-5 flex-nowrap gap-x-2" scope="col">';
 
                 echo "<a href='professor.php?id=" . $professor->getId() . "' class='bg-emerald-500 rounded-full py-1 px-4 focus:bg-slate-50
-                        text-slate-50 flex items-center mt-4 gap-x-2 justify-center border-2 border-emerald-500 focus:text-emerald-500 focus:border-emerald-500 transition duration-300 ease-in-out
+                        text-zinc-50 flex items-center mt-4 gap-x-2 justify-center border-2 border-emerald-500 focus:text-emerald-500 focus:border-emerald-500 transition duration-300 ease-in-out
                         hover:bg-emerald-600 hover:border-emerald-600'>
                            
                            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' class='w-4 h-4'>
@@ -100,7 +87,7 @@
                             </svg>
                            </a>";
                 echo "<a href='excluirProfessor.php?id=" . $professor->getId() . "'  class='bg-red-500 rounded-full py-1 px-4 focus:bg-slate-50
-                        text-slate-50 flex items-center mt-4 gap-x-2 justify-center border-2 border-red-500 focus:text-red-500 focus:border-red-500 transition duration-300 ease-in-out
+                        text-zinc-50 flex items-center mt-4 gap-x-2 justify-center border-2 border-red-500 focus:text-red-500 focus:border-red-500 transition duration-300 ease-in-out
                         hover:bg-red-3 hover:border-red-3'>
                            
                           <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor' class='w-4 h-4'>
@@ -112,8 +99,8 @@
                 echo '</tr>';
             }
             ?>
-            </tbody>
-            </table>
+        </tbody>
+        </table>
     </div>
     </div>
 

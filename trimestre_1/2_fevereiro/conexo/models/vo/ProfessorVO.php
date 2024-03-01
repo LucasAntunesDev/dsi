@@ -7,10 +7,9 @@ final class ProfessorVO extends VO {
     private $login;
     private $senha;
 
-    public function __construct($id = 0, $nome = '', $email = '', $login = '', $senha = '') {
+    public function __construct($id = 0, $nome = '', $login = '', $senha = '') {
         parent::__construct($id);
         $this->nome = $nome;
-        $this->email = $email;
         $this->login = $login;
         $this->senha = $senha;
     }
