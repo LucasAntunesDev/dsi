@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Conexo</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
+<?php include_once('includes/head.php')?>
 
 <body class="bg-slate-900 text-zinc-50">
     <div class="flex flex-col justifycenter items-center h-screen w-screen">
@@ -56,7 +48,6 @@
         <main id="tabuleiro" class="grid grid-cols-4 gap-2 min-w-6/12 m-auto text-uppercase"></main>
 </body>
 
-<!-- <script src="scripts.js"></script> -->
-<script src="script.js"></script>
+<?php include_once('includes/scripts.php')?>
 
 </html>
