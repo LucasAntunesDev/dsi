@@ -64,3 +64,11 @@ values
     ('provisão'),
     ('refeição'),
     ('lance');
+
+insert into
+    palavras (nome)
+values
+    ('zumbi'),
+    ('colégio'),
+    ('bancários'),
+    ('recreio');
