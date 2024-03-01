@@ -30,3 +30,8 @@ insert into
     categorias (nome, disciplina_id)
 values
     ('Cargos no mercado financeiro', 1)
+
+insert into
+    categorias (nome, disciplina_id)
+values
+    ('Comida', 1)
