@@ -35,3 +35,8 @@ insert into
     categorias (nome, disciplina_id)
 values
     ('Comida', 1)
+
+insert into
+    categorias (nome, disciplina_id)
+values
+    ('Bairros do Rio de Janeiro', 1)
