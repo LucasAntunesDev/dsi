@@ -25,3 +25,8 @@ insert into
     categorias (nome, disciplina_id)
 values
     ('Estabelecimentos educacionais', 1)
+
+insert into
+    categorias (nome, disciplina_id)
+values
+    ('Cargos no mercado financeiro', 1)
