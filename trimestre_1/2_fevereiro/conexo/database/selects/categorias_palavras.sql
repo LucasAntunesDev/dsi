@@ -1,6 +1,7 @@
 select
-    palavras.nome as 'Palavra',
-    categorias.nome as 'Categoria'
+    categorias_palavras.id
+    categorias.nome as 'Categoria',
+    palavras.nome as 'Palavra'
 from
     categorias_palavras
     join categorias on categorias_palavras.categoria_id = categorias.id
