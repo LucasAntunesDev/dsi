@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('disciplinas', function (Blueprint $table) {
             $table->id();
             $table->string('nome', 255)->nullable(false);
-            $table->integer('professor_id')->unsigned()->nullable(false); 
-            $table->foreign('professor_id')->references('id')->on('professores')->onUpdate('cascade')->onDelete('set null');
+            $table->unsignedBigInteger('professor_id')->unsigned()->nullable(false); 
+            $table->foreign('professor_id')->references('id')->on('professores')->onUpdate('cascade');
             $table->timestamps();
         });
     }

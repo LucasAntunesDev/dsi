@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('categorias_palavras', function (Blueprint $table) {
             $table->id();
-            $table->integer('categoria_id')->unsigned()->nullable(false); 
-            $table->integer('palavra_id')->unsigned()->nullable(false); 
-            $table->foreign('categoria_id')->references('id')->on('categorias')->onUpdate('cascade')->onDelete('set null');
-            $table->foreign('palavra_id')->references('id')->on('palavras')->onUpdate('cascade')->onDelete('set null');
+            $table->unsignedBigInteger('categoria_id')->unsigned()->nullable(false); 
+            $table->unsignedBigInteger('palavra_id')->unsigned()->nullable(false); 
+            $table->foreign('categoria_id')->references('id')->on('categorias')->onUpdate('cascade');
+            $table->foreign('palavra_id')->references('id')->on('palavras')->onUpdate('cascade');
             $table->timestamps();
         });
     }

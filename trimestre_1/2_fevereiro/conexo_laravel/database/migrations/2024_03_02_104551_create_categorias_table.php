@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->integer('disciplina_id')->unsigned()->nullable(false); 
-            $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onUpdate('cascade')->onDelete('set null');
+            $table->unsignedBigInteger('disciplina_id')->unsigned()->nullable(false); 
+            $table->foreign('disciplina_id')->references('id')->on('disciplinas')->onUpdate('cascade');
             $table->timestamps();
         });
     }
