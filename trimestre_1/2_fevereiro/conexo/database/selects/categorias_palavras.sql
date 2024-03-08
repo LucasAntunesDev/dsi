@@ -1,5 +1,5 @@
 select
-    categorias_palavras.id
+    categorias_palavras.id,
     categorias.nome as 'Categoria',
     palavras.nome as 'Palavra'
 from
